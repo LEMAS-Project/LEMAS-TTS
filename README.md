@@ -76,7 +76,9 @@ export PYTHONPATH="$PWD:${PYTHONPATH}"
 
 ### 2.1. Gradio Web UI (Multilingual Zero‑Shot TTS)
 
-The main web app entry is:
+You can try the model via our Hugging Face demo: [https://huggingface.co/spaces/LEMAS-Project/LEMAS-TTS](https://huggingface.co/spaces/LEMAS-Project/LEMAS-TTS)
+
+Locally, you can run the Gradio web app with:
 
 ```bash
 python lemas_tts/scripts/inference_gradio.py
@@ -166,6 +168,6 @@ these upstream projects.
 
 ## 5. License
 
-This repository is released under the **CC‑BY‑SA‑4.0** license.  
-See https://creativecommons.org/licenses/by-sa/4.0/ for details.
+This repository is released under the **CC‑BY‑NC‑4.0** license.  
+See https://creativecommons.org/licenses/by-nc/4.0/ for more details.
 
