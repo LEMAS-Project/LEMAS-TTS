@@ -1,10 +1,10 @@
 # LEMAS‑TTS: Multilingual Zero‑Shot TTS
 
 [![python](https://img.shields.io/badge/Python-3.10-brightgreen)](https://www.python.org/downloads/release/python-3100/)
-[![Report](https://img.shields.io/badge/GitHub-Report%20-red.svg)](https://lemas-project.github.io/LEMAS-Project/)
+[![Report](https://img.shields.io/badge/GitHub-Report%20-red.svg)](https://lemas-project.github.io/LEMAS-Project/doc/report.pdf)
 [![demo](https://img.shields.io/badge/GitHub-Demo%20page-orange.svg)](https://lemas-project.github.io/LEMAS-Project/)
-[![hfspace](https://img.shields.io/badge/🤗-Space%20-yellow)](https://huggingface.co/spaces/LEMAS-Project/LEMAS-TTS)
-[![hfmodel](https://img.shields.io/badge/🤗-Models%20-yellow)](https://huggingface.co/LEMAS-Project/LEMAS-TTS)
+[![hfspace](https://img.shields.io/badge/🤗-Space%20Demo-yellow)](https://huggingface.co/spaces/LEMAS-Project/LEMAS-TTS)
+[![hfmodel](https://img.shields.io/badge/🤗-Models%20Downloads-yellow)](https://huggingface.co/LEMAS-Project/LEMAS-TTS)
 [![GitHub stars](https://img.shields.io/github/stars/LEMAS-Project/LEMAS-TTS.svg?style=social&label=Star&maxAge=8640)](https://GitHub.com/LEMAS-Project/LEMAS-TTS/stargazers/)
 
 **LEMAS‑TTS** is a multilingual zero‑shot text‑to‑speech system, supporting 10 languages:
@@ -64,7 +64,6 @@ Download the pretrained models from [https://huggingface.co/LEMAS-Project/LEMAS-
 Then place the `pretrained_models/` folder next to the `lemas_tts/` package
 root; the code locates the repo root by looking for this folder.
 
----
 
 ## 2. Usage
 
@@ -140,7 +139,6 @@ bash lemas_tts/scripts/speech_edit_multilingual.sh
 The script supports both prosody‑enabled and non‑prosody variants; see the
 inline comments in `speech_edit_multilingual.sh` for a prosody example.
 
----
 
 ## 3. Acknowledgements
 
@@ -154,7 +152,7 @@ This project builds heavily on the following open‑source works:
 If you use LEMAS‑TTS in your work, please also consider citing and acknowledging
 these upstream projects.
 
----
+
 
 ## 4. Citation
 
@@ -165,7 +163,6 @@ these upstream projects.
   year={2026}
 }
 ```
----
 
 ## 5. License
 
