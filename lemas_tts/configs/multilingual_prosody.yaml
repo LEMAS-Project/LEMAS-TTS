@@ -1,0 +1,78 @@
+# compute_environment: LOCAL_MACHINE
+# debug: false
+# distributed_type: MULTI_GPU
+# downcast_bf16: 'no'
+# enable_cpu_affinity: true
+# gpu_ids: all
+# # machine_rank: 0
+# # main_training_function: main
+# mixed_precision: bf16
+# num_machines: 1
+# num_processes: 16
+# # rdzv_backend: static
+# same_network: true
+# use_cpu: false
+
+
+hydra:
+  run:
+    dir: exp/${model.name}_${model.mel_spec.mel_spec_type}_${model.tokenizer}_${datasets.name}/${now:%Y-%m-%d}/${now:%H-%M-%S}
+
+datasets:
+  name: multilingual_vocab898_acc_grl_prosody_ctc_fix  # dataset name
+  batch_size_per_gpu: 40000  # 8 GPUs, 8 * 38400 = 307200
+  batch_size_type: frame  # frame | sample
+  max_samples: 64  # max sequences per batch if use frame-wise batch_size. we set 32 for small models, 64 for base models
+  num_workers: 2
+  separate_langs: True
+
+optim:
+  epochs: 100
+  learning_rate: 1e-5
+  num_warmup_updates: 1000  # warmup updates
+  grad_accumulation_steps: 1  # note: updates = steps / grad_accumulation_steps
+  max_grad_norm: 1.0  # gradient clipping
+  bnb_optimizer: False  # use bnb 8bit AdamW optimizer or not
+model:
+  name: multilingual  # model name
+  tokenizer: custom  # tokenizer type
+  tokenizer_path: "pretrained_models/data/multilingual_grl/vocab.txt"  # if 'custom' tokenizer, define the path want to use (should be vocab.txt)
+  audio_dir: "pretrained_models/data/multilingual_grl" 
+  use_ctc_loss: True  # whether to use ctc loss
+  use_spk_enc: False
+  use_prosody_encoder: True
+  prosody_cfg_path: "pretrained_models/ckpts/prosody_encoder/pretssel_cfg.json"  # pretssel_cfg.json
+  prosody_ckpt_path: "pretrained_models/ckpts/prosody_encoder/prosody_encoder_UnitY2.pt"  # prosody_encoder_pretssel.pt
+
+  backbone: DiT
+  arch:
+    dim: 1024
+    depth: 22
+    heads: 16
+    ff_mult: 2
+    text_dim: 512
+    text_mask_padding: True
+    qk_norm: null  # null | rms_norm
+    conv_layers: 4
+    pe_attn_head: null
+    checkpoint_activations: False  # recompute activations and save memory for extra compute
+  mel_spec:
+    target_sample_rate: 24000
+    n_mel_channels: 100
+    hop_length: 256
+    win_length: 1024
+    n_fft: 1024
+    mel_spec_type: vocos  # vocos | bigvgan
+  vocoder:
+    is_local: True  # use local offline ckpt or not
+    # Path in the original training environment; kept here for reference only.
+    # For the open-sourced LEMAS-TTS repo, use `pretrained_models/ckpts/vocos-mel-24khz`.
+    local_path: "pretrained_models/ckpts/vocos-mel-24khz"  # local vocoder path
+
+ckpts:
+  logger: tensorboard  # wandb | tensorboard | null
+  log_samples: True  # infer random sample per save checkpoint. wip, normal to fail with extra long samples
+  save_per_updates: 1000  # save checkpoint per updates
+  keep_last_n_checkpoints: -1  # -1 to keep all, 0 to not save intermediate, > 0 to keep last N checkpoints
+  last_per_updates: 1000  # save last checkpoint per updates
+  save_dir: ckpts/${model.name}_${model.mel_spec.mel_spec_type}_${model.tokenizer}_${datasets.name}
