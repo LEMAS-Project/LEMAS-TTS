@@ -4,7 +4,7 @@
 [![Report](https://img.shields.io/badge/GitHub-Report%20-red.svg)](https://lemas-project.github.io/LEMAS-Project/doc/report.pdf)
 [![demo](https://img.shields.io/badge/GitHub-Demo%20page-orange.svg)](https://lemas-project.github.io/LEMAS-Project/)
 [![hfspace](https://img.shields.io/badge/🤗-Space%20Demo-yellow)](https://huggingface.co/spaces/LEMAS-Project/LEMAS-TTS)
-[![hfmodel](https://img.shields.io/badge/🤗-Models%20Downloads-yellow)](https://huggingface.co/LEMAS-Project/LEMAS-TTS)
+[![hfmodel](https://img.shields.io/badge/🤗-Models%20Download-yellow)](https://huggingface.co/LEMAS-Project/LEMAS-TTS)
 
 **LEMAS‑TTS** is a multilingual zero‑shot text‑to‑speech system, supporting 10 languages:
 - Chinese
@@ -82,9 +82,6 @@ Locally, you can run the Gradio web app with:
 ```bash
 python lemas_tts/scripts/inference_gradio.py
 ```
-
-The UI also exposes pre‑configured examples that use
-`pretrained_models/demos/lemas_tts_test/*.wav` as reference audio.
 
 You can customize host/port and sharing:
 
