@@ -1,7 +1,7 @@
 # LEMAS‑TTS: Multilingual Zero‑Shot TTS
 
 [![python](https://img.shields.io/badge/Python-3.10-brightgreen)](https://www.python.org/downloads/release/python-3100/)
-[![Report](https://img.shields.io/badge/GitHub-Report%20-red.svg)](https://lemas-project.github.io/LEMAS-Project/doc/report.pdf)
+[![Report](https://img.shields.io/badge/Arxiv-Report%20-red.svg)](https://arxiv.org/abs/2601.04233)
 [![demo](https://img.shields.io/badge/GitHub-Demo%20page-orange.svg)](https://lemas-project.github.io/LEMAS-Project/)
 [![hfspace](https://img.shields.io/badge/🤗-Space%20Demo-yellow)](https://huggingface.co/spaces/LEMAS-Project/LEMAS-TTS)
 [![hfmodel](https://img.shields.io/badge/🤗-Models%20Download-yellow)](https://huggingface.co/LEMAS-Project/LEMAS-TTS)
@@ -158,6 +158,7 @@ these upstream projects.
 @article{zhao2026lemas,
   title={LEMAS: A 150K-Hour Large-scale Extensible Multilingual Audio Suite with Generative Speech Models},
   author={Zhao, Zhiyuan and Lin, Lijian and Zhu, Ye and Xie, Kai and Liu, Yunfei and Li, Yu},
+  journal={arXiv preprint arXiv:2601.04233},
   year={2026}
 }
 ```
