@@ -5,6 +5,7 @@
 [![demo](https://img.shields.io/badge/GitHub-Demo%20page-orange.svg)](https://lemas-project.github.io/LEMAS-Project/)
 [![hfspace](https://img.shields.io/badge/🤗-Space%20Demo-yellow)](https://huggingface.co/spaces/LEMAS-Project/LEMAS-TTS)
 [![hfmodel](https://img.shields.io/badge/🤗-Models%20Download-yellow)](https://huggingface.co/LEMAS-Project/LEMAS-TTS)
+[![msmodel](https://img.shields.io/badge/MS-Models%20Download-purple)](https://www.modelscope.cn/models/LEMAS/LEMAS-TTS)
 
 **LEMAS‑TTS** is a multilingual zero‑shot text‑to‑speech system, supporting 10 languages:
 - Chinese
